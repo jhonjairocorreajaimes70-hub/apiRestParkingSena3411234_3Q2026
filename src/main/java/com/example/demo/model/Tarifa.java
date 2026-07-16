@@ -1,5 +1,35 @@
 package com.example.demo.model;
 
-public class Tarifa {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name = "tarifa")
+public class Tarifa {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idTarifa;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private TipoVehiculo tipovehiculo;
+	@Column(nullable = false)
+	private Double tarifaPorHora;
+	@Column(nullable = false)
+	private Double tarifaPorDia;
 }
