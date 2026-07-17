@@ -30,6 +30,7 @@ public class Vehiculo {
 	private String placa;
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
+	private TipoVehiculo tipo;
 	private String marca;
 	private String modelo;
 

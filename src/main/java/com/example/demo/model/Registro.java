@@ -15,6 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,7 +24,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "registro")
 public class Registro {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idRegistro;
@@ -33,7 +34,7 @@ public class Registro {
 	private Double valorPagado;
 	@Column(nullable = false)
 	private Boolean activo = true;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idVerhiculo", nullable = false)
 	private Vehiculo vehiculo;
